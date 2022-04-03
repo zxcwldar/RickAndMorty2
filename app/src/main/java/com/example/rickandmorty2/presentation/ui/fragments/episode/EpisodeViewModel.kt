@@ -17,6 +17,7 @@ import javax.inject.Inject
 class EpisodeViewModel @Inject constructor(
     private val episodeRepository: EpisodeRepository
 ) : BaseViewModel() {
+
     private var page = 1
     var isLoading: Boolean = false
 
@@ -33,7 +34,7 @@ class EpisodeViewModel @Inject constructor(
             isLoading = false
         }
     }
-
+    
     fun getEpisodes() = episodeRepository.getEpisodes().collect(_episodesLocaleState, null)
 }
 

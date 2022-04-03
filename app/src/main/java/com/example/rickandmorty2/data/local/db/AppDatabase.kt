@@ -9,9 +9,7 @@ import com.example.rickandmorty2.data.remote.dtos.character.RickAndMortyCharacte
 import com.example.rickandmorty2.data.remote.dtos.episode.RickAndMortyEpisode
 import com.example.rickandmorty2.data.remote.dtos.location.RickAndMortyLocation
 
-@Database(
-    entities = [RickAndMortyCharacter::class, RickAndMortyEpisode::class, RickAndMortyLocation::class], version = 2
-)
+@Database(entities = [RickAndMortyCharacter::class, RickAndMortyEpisode::class, RickAndMortyLocation::class], version = 3)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun characterDao(): CharacterDao

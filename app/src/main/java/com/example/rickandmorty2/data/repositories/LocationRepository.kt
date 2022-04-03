@@ -11,15 +11,13 @@ class LocationRepository @Inject constructor(
     private val locationDao: LocationDao
     ) :
     BaseRepository() {
-    fun fetchLocation(page: Int) = doRequest {
-        service.fetchLocations(page)
-    }
-    suspend fun insertLocations(locations : List<RickAndMortyLocation>){
-        locationDao.insertAllLocation(*locations.toTypedArray())
-    }
+
+    fun fetchLocation(page: Int) = doRequest(
+        { service.fetchLocations(page) },
+        { location -> locationDao.insertAllLocation(* location.results.toTypedArray()) })
+
 
     fun getLocations() = doRequest {
         locationDao.getAllLocation()
     }
-
 }

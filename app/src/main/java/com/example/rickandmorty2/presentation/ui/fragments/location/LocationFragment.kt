@@ -22,7 +22,7 @@ class LocationFragment : BaseFragment<FragmentLocationBinding, LocationViewModel
     private val locationAdapter = LocationAdapter()
 
     override fun setupObserver() {
-        subscribeToLocation()
+        subscribeToLocations()
         subscribeToLocationLocale()
     }
 
@@ -44,7 +44,7 @@ class LocationFragment : BaseFragment<FragmentLocationBinding, LocationViewModel
         })
     }
 
-    private fun subscribeToLocation() {
+    private fun subscribeToLocations() {
         viewModel.locationsState.observe(viewLifecycleOwner) {
             locationAdapter.submitData(it.results)
 

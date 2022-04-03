@@ -12,10 +12,8 @@ import kotlinx.coroutines.flow.Flow
 interface LocationDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertAllLocation(vararg location: RickAndMortyLocation)
+    suspend fun insertAllLocation(vararg locations: RickAndMortyLocation)
 
-
-
-    @Query("SELECT * FROM rickandmortylocation" )
-   suspend fun getAllLocation() : List<RickAndMortyLocation>
+    @Query("SELECT *FROM rickandmortylocation ")
+    suspend fun getAllLocation(): List<RickAndMortyLocation>
 }

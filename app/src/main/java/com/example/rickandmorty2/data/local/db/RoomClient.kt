@@ -12,9 +12,9 @@ class RoomClient {
     ).fallbackToDestructiveMigration()
     .build()
 
-    fun provideCharacterDao(appDatabase: AppDatabase): CharacterDao = appDatabase.characterDao()
+    fun provideCharacterDao(cappDatabase: AppDatabase): CharacterDao = cappDatabase.characterDao()
 
-    fun provideEpisodeDao(appDatabase: AppDatabase): EpisodeDao = appDatabase.episodeDao()
+    fun provideEpisodeDao(eappDatabase: AppDatabase): EpisodeDao = eappDatabase.episodeDao()
 
-    fun provideLocationDao(appDatabase: AppDatabase): LocationDao = appDatabase.locationDao()
+    fun provideLocationDao(lappDatabase: AppDatabase): LocationDao = lappDatabase.locationDao()
 }

@@ -13,7 +13,6 @@ class EpisodeAdapter :
         BaseDiffUtil()
     ) {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EpisodeViewHolder =
         EpisodeViewHolder(
             ItemEpisodeBinding.inflate(
@@ -22,6 +21,11 @@ class EpisodeAdapter :
                 false
             )
         )
+
+    override fun onBindViewHolder(holder: EpisodeViewHolder, position: Int) {
+        getItem(position)?.let { holder.onBind(it) }
+
+    }
 
     inner class EpisodeViewHolder(private val binding: ItemEpisodeBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -36,10 +40,6 @@ class EpisodeAdapter :
 
     }
 
-    override fun onBindViewHolder(holder: EpisodeViewHolder, position: Int) {
-        getItem(position)?.let { holder.onBind(it) }
-
-    }
 
 }
 

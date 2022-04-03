@@ -30,12 +30,14 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>(
     open fun setupViews() {
 
     }
+    open fun setupListeners() {
+    }
+    open fun setupRequest() {
+    }
     open fun setupObserver(){
     }
 
-    open fun setupListeners() {
-    }
 
-    open fun setupRequest() {
-    }
+
+
 }

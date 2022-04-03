@@ -2,6 +2,8 @@ package com.example.rickandmorty2.presentation.ui.fragments.episode
 
 import android.content.Context
 import android.net.ConnectivityManager
+import android.util.Log
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding

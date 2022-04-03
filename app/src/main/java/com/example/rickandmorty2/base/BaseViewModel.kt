@@ -15,7 +15,6 @@ abstract class BaseViewModel : ViewModel(){
 
     ) {
 
-
         viewModelScope.launch {
             collect {
                 when (it) {
